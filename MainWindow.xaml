@@ -1,0 +1,54 @@
+﻿<Window x:Class="InkCanvasEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InkCanvasEditor"
+        mc:Ignorable="d"
+        Title="Графический редактор" Height="600" Width="600" Padding="5">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Padding="5">
+            <MenuItem Header="_Файл">
+                <MenuItem Header="_Открыть" Click="MenuItemOpenFile_Click"/>
+                <MenuItem Header="_Сохранить" Click="MenuItemSaveFile_Click"/>
+                <Separator/>
+                <MenuItem Header="_Выход" Click="MenuItemExit_Click"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray Grid.Row="1">
+            <ToolBar Padding="2">
+                <ComboBox Width="40" Height="24" SelectedIndex="0" SelectionChanged="ComboBoxolor_SelectionChanged" >
+                    <ComboBoxItem Tag="Black">
+                        <Rectangle Width="16" Height="16" Fill="Black"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Red">
+                        <Rectangle Width="16" Height="16" Fill="Red"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Green">
+                        <Rectangle Width="16" Height="16" Fill="Green"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Blue">
+                        <Rectangle Width="16" Height="16" Fill="Blue"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Yellow">
+                        <Rectangle Width="16" Height="16" Fill="Yellow" Stroke="Gray"/>
+                    </ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+            <ToolBar Padding="2">
+                <RadioButton Margin="0,0,3,0" ToolTip="Карандаш" IsChecked="True" Checked="RadioButtonPencil_Checked">
+                    <Image Source="Data\Pencil.png" Width="16" Height="16"/>
+                </RadioButton>
+                <RadioButton ToolTip="Ластик" Checked="RadioButtonEraser_Checked">
+                    <Image Source="Data\Eraser.png" Width="16" Height="16"/>
+                </RadioButton>
+            </ToolBar>
+        </ToolBarTray>
+        <InkCanvas x:Name="inkCanvas" Grid.Row="2"/>
+    </Grid>
+</Window>
