@@ -41,10 +41,10 @@
                 </ComboBox>
             </ToolBar>
             <ToolBar Padding="2">
-                <RadioButton Margin="0,0,3,0" ToolTip="Карандаш" IsChecked="True" Checked="RadioButtonPencil_Checked">
+                <RadioButton GroupName="Tool" Margin="0,0,3,0" ToolTip="Карандаш" IsChecked="True" Checked="RadioButtonPencil_Checked">
                     <Image Source="Data\Pencil.png" Width="16" Height="16"/>
                 </RadioButton>
-                <RadioButton ToolTip="Ластик" Checked="RadioButtonEraser_Checked">
+                <RadioButton GroupName="Tool" ToolTip="Ластик" Checked="RadioButtonEraser_Checked">
                     <Image Source="Data\Eraser.png" Width="16" Height="16"/>
                 </RadioButton>
             </ToolBar>
